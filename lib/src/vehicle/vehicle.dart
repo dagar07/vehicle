@@ -44,7 +44,7 @@ class _VehicleState extends State<Vehicle> {
     if (isLoaded) {
       if(vehicles.isNotEmpty) {
         return ListView.builder(
-          padding: EdgeInsets.only(top: 10.0),
+          padding: EdgeInsets.only(top: Responsive.responsiveSize(10.0)),
           itemCount: vehicles.length,
           itemBuilder: (context, index) {
             return VehicleCard(vehicle: vehicles[index]);
@@ -56,7 +56,7 @@ class _VehicleState extends State<Vehicle> {
             error,
             style: TextStyle(
               color: Colors.red[700],
-              fontSize: 16.0
+              fontSize: Responsive.responsiveSize(16.0)
             ),
           ),
         );
