@@ -34,9 +34,7 @@ class ServiceRequest {
         throw Exception('Failed to load post');
       }
     } catch(e) {
-      print(e);
       throw Exception('Failed to load post');
-      
     }
   }
 }

@@ -1,6 +1,8 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:vehicle/src/commonWidgets/custom_appbar.dart';
+import 'package:vehicle/src/utility/responsive.dart';
 import 'package:vehicle/src/vehicle/model/vehicle_model.dart';
 import 'package:vehicle/src/vehicle/service.dart';
 import 'package:vehicle/src/vehicle/widgets/vehicle_card.dart';
@@ -13,6 +15,7 @@ class Vehicle extends StatefulWidget {
 class _VehicleState extends State<Vehicle> {
 
   List<VehicleModel> vehicles = [];
+  MediaQueryData queryData;
   var isLoaded = false;
   var error = '';
 
@@ -67,15 +70,18 @@ class _VehicleState extends State<Vehicle> {
   
   @override
   Widget build(BuildContext context) {
+    Responsive.context = context;
     return Scaffold(
-      appBar: AppBar(
+      appBar: CustomAppBar(
+        height: Responsive.responsiveSize(context, 58.0),
         title: Text(
           'Vehicle Monitor',
           style: TextStyle(
-            color: Colors.black
+            color: Colors.black,
+            fontWeight: FontWeight.w600,
+            fontSize: Responsive.responsiveSize(context, 21.0)
           ),
         ),
-        titleSpacing: 0.0,
         leading: IconButton(
           padding: EdgeInsets.only(right: 1.0),
           onPressed: () {
@@ -84,13 +90,12 @@ class _VehicleState extends State<Vehicle> {
           icon: Icon(
             Icons.arrow_back_ios,
             color: Colors.black,
+            size: Responsive.responsiveSize(context, 24.0),
           )
         ),
-        backgroundColor: Colors.white,
-        centerTitle: false,
         actions: <Widget>[
           Container(
-            width: 60.0,
+            width: Responsive.responsiveSize(context, 60.0),
             color: Colors.red,
           )
         ],
