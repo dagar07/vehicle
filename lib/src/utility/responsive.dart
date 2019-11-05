@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 
 class Responsive {
   static BuildContext context;
@@ -19,12 +20,18 @@ class Responsive {
     MediaQuery.of(context).size.width < 1200;
   }
 
+  static bool isSmallDeviceLandscape() {
+    return MediaQuery.of(context).size.height < 600;
+  }
+
   static aspectRatio(context) {
-    return MediaQuery.of(context).size.height/MediaQuery.of(context).size.width;
+    final width = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
+    return MediaQuery.of(context).orientation == Orientation.landscape ? width/height: height/width;
   }
 
   static responsiveSize(size) {
-    final exSize = isSmallScreen(context) ? size : size * aspectRatio(context);
+    final exSize = isSmallScreen(context) || isSmallDeviceLandscape() ? size : size * aspectRatio(context);
     return exSize;
   }
 }
