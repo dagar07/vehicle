@@ -16,7 +16,7 @@ class VehicleCard extends StatelessWidget {
       text,
       style: TextStyle(
         color: color ?? Colors.black87,
-        fontSize: Responsive.responsiveSize(Responsive.context, 13.0),
+        fontSize: Responsive.responsiveSize(13.0),
         fontWeight: FontWeight.w500
       ),
     );
@@ -24,12 +24,12 @@ class VehicleCard extends StatelessWidget {
 
   Widget _vehicleTextContent(text, value) {
     return Padding(
-      padding: EdgeInsets.all(Responsive.responsiveSize(Responsive.context, 10.0)),
+      padding: EdgeInsets.all(Responsive.responsiveSize(10.0)),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           SizedBox(
-            width: Responsive.responsiveSize(Responsive.context, 130.0),
+            width: Responsive.responsiveSize(130.0),
             child:_textWidget(text)
           ),
           _textWidget(':'),
@@ -42,11 +42,11 @@ class VehicleCard extends StatelessWidget {
   _getTitleContent() {
     return Container(
       color: Color.fromRGBO(255, 30, 30, 1),
-      padding: EdgeInsets.all(Responsive.responsiveSize(Responsive.context, 8.0)),
+      padding: EdgeInsets.all(Responsive.responsiveSize(8.0)),
       child: Row(
         children: <Widget>[
           SizedBox(
-            width: Responsive.responsiveSize(Responsive.context, 130.0),
+            width: Responsive.responsiveSize(130.0),
             child: _textWidget('Vehicle ID', Colors.white),
           ),
           _textWidget(':', Colors.white),
@@ -55,8 +55,8 @@ class VehicleCard extends StatelessWidget {
             child: Align(
               alignment: Alignment.centerRight,
               child: Container(
-                width: Responsive.responsiveSize(Responsive.context, 20.0),
-                height: Responsive.responsiveSize(Responsive.context, 20.0),
+                width: Responsive.responsiveSize(20.0),
+                height: Responsive.responsiveSize(20.0),
                 color: Colors.white,
               ),
             ),
@@ -68,21 +68,21 @@ class VehicleCard extends StatelessWidget {
 
   _getBtmContent() {
     return Container(
-      padding: EdgeInsets.all(Responsive.responsiveSize(Responsive.context, 8.0)),
+      padding: EdgeInsets.all(Responsive.responsiveSize(8.0)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: <Widget>[
           Icon(
             Icons.watch_later,
-            size: Responsive.responsiveSize(Responsive.context, 14.0),
+            size: Responsive.responsiveSize(14.0),
             color: Colors.white,
           ),
-          SizedBox(width: Responsive.responsiveSize(Responsive.context, 3.0)),
+          SizedBox(width: Responsive.responsiveSize(3.0)),
           Text(
             '${vehicle.speed.toInt()} km/hr',
             style: TextStyle(
               color: Colors.white,
-              fontSize: Responsive.responsiveSize(Responsive.context, 12.0)
+              fontSize: Responsive.responsiveSize(12.0)
             ),
           )
         ],
@@ -96,9 +96,9 @@ class VehicleCard extends StatelessWidget {
     Responsive.context = context;
     return Container(
       margin: EdgeInsets.only(
-        left: Responsive.responsiveSize(Responsive.context, 8.0),
-        right: Responsive.responsiveSize(Responsive.context, 8.0),
-        bottom: Responsive.responsiveSize(Responsive.context, 12.0),
+        left: Responsive.responsiveSize(8.0),
+        right: Responsive.responsiveSize(8.0),
+        bottom: Responsive.responsiveSize(12.0),
       ),
       child: Column(
         children: <Widget>[

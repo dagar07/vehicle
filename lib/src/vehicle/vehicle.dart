@@ -73,13 +73,13 @@ class _VehicleState extends State<Vehicle> {
     Responsive.context = context;
     return Scaffold(
       appBar: CustomAppBar(
-        height: Responsive.responsiveSize(context, 58.0),
+        height: Responsive.responsiveSize(58.0),
         title: Text(
           'Vehicle Monitor',
           style: TextStyle(
             color: Colors.black,
             fontWeight: FontWeight.w600,
-            fontSize: Responsive.responsiveSize(context, 21.0)
+            fontSize: Responsive.responsiveSize(21.0)
           ),
         ),
         leading: IconButton(
@@ -90,12 +90,12 @@ class _VehicleState extends State<Vehicle> {
           icon: Icon(
             Icons.arrow_back_ios,
             color: Colors.black,
-            size: Responsive.responsiveSize(context, 24.0),
+            size: Responsive.responsiveSize(24.0),
           )
         ),
         actions: <Widget>[
           Container(
-            width: Responsive.responsiveSize(context, 60.0),
+            width: Responsive.responsiveSize(60.0),
             color: Colors.red,
           )
         ],

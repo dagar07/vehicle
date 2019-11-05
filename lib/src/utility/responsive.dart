@@ -23,8 +23,8 @@ class Responsive {
     return MediaQuery.of(context).size.height/MediaQuery.of(context).size.width;
   }
 
-  static responsiveSize(sContext, size) {
-    final exSize = isSmallScreen(context) ? size : isMediumScreen(context) ?  (size * aspectRatio(context)) : (size * aspectRatio(context));
+  static responsiveSize(size) {
+    final exSize = isSmallScreen(context) ? size : size * aspectRatio(context);
     return exSize;
   }
 }
